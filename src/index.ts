@@ -6,7 +6,7 @@ import { formatSumResponse } from "./tools.js";
 
 // Create an instance of the MCP server
 const server = new McpServer({
-  name: "node-ts-mcp-demo",
+  name: "mcp-typescript-starter",
   version: "1.0.0",
 });
 
@@ -27,7 +27,7 @@ server.tool(
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("Node TypeScript MCP Demo Server running on stdio");
+  console.error("MCP Typescript Starter Server running on stdio");
 }
 
 main().catch((error) => {

@@ -1,4 +1,4 @@
-# nodejs-typescript-mcp
+# mcp-typescript-starter
 
 A simple MCP (Model Context Protocol) server demo built with Node.js and TypeScript. This project demonstrates how to create an MCP server using the official SDK, featuring a `sum` tool for adding two numbers.
 
@@ -7,7 +7,7 @@ A simple MCP (Model Context Protocol) server demo built with Node.js and TypeScr
 - TypeScript for type safety
 - Standard MCP server implementation via the official SDK
 - Built-in `sum` tool to calculate a + b
-- CLI executable (`node-ts-mcp-demo`)
+- CLI executable (`mcp-typescript-starter`)
 - Comprehensive test suite with Vitest
 - Test coverage reporting
 - GitHub Actions CI/CD
@@ -75,7 +75,7 @@ Coverage reports are generated in HTML format in the `coverage/` directory.
    ```json
    {
      "mcpServers": {
-       "node-ts-mcp-demo": {
+       "mcp-typescript-starter": {
          "command": "node",
          "args": [
            "/ABSOLUTE/PATH/TO/PROJECT/dist/index.js"
@@ -104,7 +104,7 @@ Run the following command in the project root to create a symbolic link, which m
 npm link
 ```
 
-After running this, you can use `node-ts-mcp-demo` (or the name specified in the `bin` field) directly in your terminal to start the MCP server.
+After running this, you can use `mcp-typescript-starter` (or the name specified in the `bin` field) directly in your terminal to start the MCP server.
 
 ## Project Structure
 

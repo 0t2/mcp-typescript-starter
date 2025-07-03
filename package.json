@@ -1,11 +1,11 @@
 {
-  "name": "nodejs-typescript-mcp",
+  "name": "mcp-typescript-starter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "node-ts-mcp-demo": "./dist/index.js"
+    "mcp-typescript-starter": "./dist/index.js"
   },
   "scripts": {
     "dev": "tsc --watch",

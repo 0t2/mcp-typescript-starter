@@ -6,7 +6,7 @@ import { formatSumResponse } from '../../src/tools.js';
 describe('MCP Server Integration Tests', () => {
   it('should be able to create an MCP server instance', () => {
     const server = new McpServer({
-      name: "node-ts-mcp-demo",
+      name: "mcp-typescript-starter",
       version: "1.0.0",
     });
     
@@ -16,7 +16,7 @@ describe('MCP Server Integration Tests', () => {
 
   it('should be able to register a tool without throwing an error', () => {
     const server = new McpServer({
-      name: "node-ts-mcp-demo",
+      name: "mcp-typescript-starter",
       version: "1.0.0",
     });
 
