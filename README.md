@@ -1,4 +1,20 @@
+
 # mcp-typescript-starter
+
+
+
+## How to use this template
+
+To fully utilize this template for your own project:
+
+1. Use `git clone` to copy this repo locally.
+2. Rename the project folder and update the `name` field in `package.json` to your new project name.
+3. Run `pnpm install` to install all dependencies.
+4. Start developing your MCP server by modifying the source code in the `src/` directory.
+5. Use the built-in scripts (e.g., `pnpm dev`, `pnpm test`) for development and testing.
+6. (Optional) Remove the existing git history by deleting the `.git` folder and re-initialize with `git init` for a fresh start.
+
+This approach ensures your new project is independent and clean, without any fork or commit history from the template.
 
 A simple MCP (Model Context Protocol) server demo built with Node.js and TypeScript. This project demonstrates how to create an MCP server using the official SDK, featuring a `sum` tool for adding two numbers.
 
