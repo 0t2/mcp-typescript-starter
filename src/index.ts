@@ -2,6 +2,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
+import { formatSumResponse } from "./tools.js";
 
 // Create an instance of the MCP server
 const server = new McpServer({
@@ -18,15 +19,7 @@ server.tool(
     b: z.number().describe("The second number"),
   },
   async ({ a, b }) => {
-    const result = a + b;
-    return {
-      content: [
-        {
-          type: "text",
-          text: `a + b = ${result}`,
-        },
-      ],
-    };
+    return formatSumResponse(a, b);
   },
 );
 

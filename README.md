@@ -8,6 +8,9 @@ A simple MCP (Model Context Protocol) server demo built with Node.js and TypeScr
 - Standard MCP server implementation via the official SDK
 - Built-in `sum` tool to calculate a + b
 - CLI executable (`node-ts-mcp-demo`)
+- Comprehensive test suite with Vitest
+- Test coverage reporting
+- GitHub Actions CI/CD
 
 ## Scripts
 
@@ -18,6 +21,41 @@ A simple MCP (Model Context Protocol) server demo built with Node.js and TypeScr
 | `pnpm format`       | Format all files using Prettier             |
 | `pnpm format:check` | Check code formatting with Prettier         |
 | `pnpm format:src`   | Format only source files in `src` directory |
+| `pnpm test`         | Run tests in watch mode                     |
+| `pnpm test:run`     | Run tests once                              |
+| `pnpm test:watch`   | Run tests in watch mode                     |
+| `pnpm test:coverage`| Run tests with coverage report              |
+
+## Testing
+
+This project uses [Vitest](https://vitest.dev/) for testing. The test suite includes:
+
+- **Unit tests** for individual functions (`src/tools.test.ts`)
+- **Integration tests** for MCP server functionality (`tests/integration.test.ts`)
+- **Coverage reporting** with threshold enforcement
+
+### Running Tests
+
+```bash
+# Run tests once
+pnpm test:run
+
+# Run tests in watch mode
+pnpm test:watch
+
+# Generate coverage report
+pnpm test:coverage
+```
+
+### Test Coverage
+
+The project maintains high test coverage with the following thresholds:
+- Statements: 80%
+- Branches: 80%
+- Functions: 80%
+- Lines: 80%
+
+Coverage reports are generated in HTML format in the `coverage/` directory.
 
 ## Usage
 
@@ -58,17 +96,39 @@ A simple MCP (Model Context Protocol) server demo built with Node.js and TypeScr
      - `b`: The second number
    - Returns: `a + b = result`
 
+### Global Linking (npm link)
+
+Run the following command in the project root to create a symbolic link, which makes the command specified in the `bin` field of `package.json` available globally:
+
+```bash
+npm link
+```
+
+After running this, you can use `node-ts-mcp-demo` (or the name specified in the `bin` field) directly in your terminal to start the MCP server.
+
 ## Project Structure
 
 ```
 .
-├── src/           # Source code
-│   └── index.ts   # MCP server entry point
-├── dist/          # Compiled output (gitignored)
-├── package.json   # Project config and dependencies
-├── tsconfig.json  # TypeScript config
-├── .prettierrc    # Prettier config
-├── .gitignore     # Git ignore list
+├── src/                   # Source code
+│   ├── index.ts          # MCP server entry point
+│   └── tools.ts          # Tool implementations
+├── tests/                # Test files (separated from source)
+│   ├── unit/             # Unit tests
+│   │   ├── tools.test.ts # Unit tests for tools.ts
+│   └── integration/      # Integration tests
+│       └── integration.test.ts # MCP server integration tests
+├── .github/              # GitHub Actions workflows
+│   └── workflows/
+│       └── test.yml      # CI/CD pipeline
+├── dist/                 # Compiled output (gitignored)
+├── coverage/             # Test coverage reports (gitignored)
+├── package.json          # Project config and dependencies
+├── tsconfig.json         # TypeScript config
+├── vitest.config.ts      # Vitest configuration
+├── TESTING.md            # Detailed testing documentation
+├── .prettierrc           # Prettier config
+└── .gitignore            # Git ignore list
 ```
 
 ## Development Environment
@@ -77,6 +137,16 @@ A simple MCP (Model Context Protocol) server demo built with Node.js and TypeScr
 - TypeScript 5.8.x
 - MCP SDK 1.13.x
 - Prettier 3.6.x
+- Vitest 2.1.x
+
+## Continuous Integration
+
+This project uses GitHub Actions for CI/CD:
+
+- Runs tests on Node.js 18.x, 20.x, and 22.x
+- Generates coverage reports
+- Runs on push to `main` and `develop` branches
+- Runs on pull requests to `main`
 
 ## Formatting
 
